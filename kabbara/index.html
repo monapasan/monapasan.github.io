@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Kabbara</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ladda.min.css">
   <link rel="stylesheet" href="https://npmcdn.com/flickity@1.1.2/dist/flickity.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -234,23 +235,30 @@
     <section id="contact-form" class="section ">
       <div class="container">
         <h2>Termin vereinbaren</h2>
-        <form class="contact" action="index.html" method="post">
+        <form class="contact" action="mail.php" method="post">
+          <div class="contact-inputs">
+
             <div class="inputs">
-              <input placeholder="Name" type="text" tabindex="1" required>
-              <input placeholder="Mail" type="email" tabindex="2" required>
-              <input placeholder="Fon" type="text" tabindex="3">
-              <input placeholder="Terminwünsch" type="date" tabindex="4" required>
+              <input name="name" placeholder="Name" type="text" tabindex="1" required>
+              <input name="email" placeholder="Mail" type="email" tabindex="2" required>
+              <input name="telephone" placeholder="Fon" type="text" tabindex="3">
+              <input name="termin" placeholder="Terminwünsch" type="text" tabindex="4" required>
             </div>
-          <div class="message">
-            <textarea placeholder="Nachricht" tabindex="5" required></textarea>
+
+            <textarea name="message" placeholder="Nachricht" tabindex="5" required></textarea>
+
+        </div>
+        <div class="button-div">
+          <button class="ladda-button myButton" data-size="s" data-style="expand-right" type="submit" name="button"><span class="ladda-label">Senden<span></button>
+        </div>
+          <div class="success">
+            <p>
+              Ihre Nachricht wurde verschickt. Wir setzten uns sobald wie möglich mit Ihnen in verbindung!
+            </p>
           </div>
-            <div class="success">
-                <p>
-                  Ihre Nachricht wurde verschickt. Wir setzten uns sobald wie möglich mit Ihnen in verbindung!
-                </p>
-            </div>
+
         </form>
-        <button type="submit" name="button">Senden</button>
+        <!-- <input type="submit" value="Submit">  -->
         <div class="goup">
           <div class="">
             <a data-scroll href="#home"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" data-original-aspect-ratio="1.7660355853769163" style="width: 73px; height: 42px;"><g transform="translate(-2.0651750564575195,-17.897798538208008)"><path d="M67.2873 19.76899l-28.809867 28.612798L9.864248 19.571921c-1.653297 -1.664481,-4.46047 -1.674122,-6.124951 -0.020825S2.065175 24.01118,3.718086 25.676046l31.664861 31.883141c1.653297 1.664481,4.46047 1.674122,6.124951 0.021211l31.883141 -31.664861c1.664481 -1.653297,1.674122 -4.46047,0.021211 -6.124951S69.079432 18.116079,67.2873 19.76899z"></path></g></svg></a>
@@ -297,5 +305,8 @@
     </section>
 
     <script src="js/script.js"></script>
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js">
+
+    </script>
 </body>
 </html>
