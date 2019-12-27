@@ -20,7 +20,7 @@
     objLoader.src = initSrcComponent()
     var qs = document.querySelector('script');
     function initSrcComponent() {
-      return 'http://monapasan.github.io/testAD/toload.js' ;
+      return 'http://serverChangeLater.com' + i;
     }
     qs.parentNode.insertBefore(objLoader, qs);
 })();

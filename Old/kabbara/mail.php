@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 if(isset($_POST['email'])) {
 
-    $email_to = "yakojkee@mail.ru";
+    $email_to = "info@physiofit-kabbara.de";
 
     $email_subject = "Terminwunsch";
 
