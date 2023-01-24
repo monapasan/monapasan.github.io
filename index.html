@@ -1,640 +1,77 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Oleg Yarin</title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	text-indent: -1.7em;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-
-.highlight-default {
-}
-.highlight-gray {
-	color: rgb(155,154,151);
-}
-.highlight-brown {
-	color: rgb(100,71,58);
-}
-.highlight-orange {
-	color: rgb(217,115,13);
-}
-.highlight-yellow {
-	color: rgb(223,171,1);
-}
-.highlight-teal {
-	color: rgb(15,123,108);
-}
-.highlight-blue {
-	color: rgb(11,110,153);
-}
-.highlight-purple {
-	color: rgb(105,64,165);
-}
-.highlight-pink {
-	color: rgb(173,26,114);
-}
-.highlight-red {
-	color: rgb(224,62,62);
-}
-.highlight-gray_background {
-	background: rgb(235,236,237);
-}
-.highlight-brown_background {
-	background: rgb(233,229,227);
-}
-.highlight-orange_background {
-	background: rgb(250,235,221);
-}
-.highlight-yellow_background {
-	background: rgb(251,243,219);
-}
-.highlight-teal_background {
-	background: rgb(221,237,234);
-}
-.highlight-blue_background {
-	background: rgb(221,235,241);
-}
-.highlight-purple_background {
-	background: rgb(234,228,242);
-}
-.highlight-pink_background {
-	background: rgb(244,223,235);
-}
-.highlight-red_background {
-	background: rgb(251,228,228);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(55, 53, 47, 0.6);
-	fill: rgba(55, 53, 47, 0.6);
-}
-.block-color-brown {
-	color: rgb(100,71,58);
-	fill: rgb(100,71,58);
-}
-.block-color-orange {
-	color: rgb(217,115,13);
-	fill: rgb(217,115,13);
-}
-.block-color-yellow {
-	color: rgb(223,171,1);
-	fill: rgb(223,171,1);
-}
-.block-color-teal {
-	color: rgb(15,123,108);
-	fill: rgb(15,123,108);
-}
-.block-color-blue {
-	color: rgb(11,110,153);
-	fill: rgb(11,110,153);
-}
-.block-color-purple {
-	color: rgb(105,64,165);
-	fill: rgb(105,64,165);
-}
-.block-color-pink {
-	color: rgb(173,26,114);
-	fill: rgb(173,26,114);
-}
-.block-color-red {
-	color: rgb(224,62,62);
-	fill: rgb(224,62,62);
-}
-.block-color-gray_background {
-	background: rgb(235,236,237);
-}
-.block-color-brown_background {
-	background: rgb(233,229,227);
-}
-.block-color-orange_background {
-	background: rgb(250,235,221);
-}
-.block-color-yellow_background {
-	background: rgb(251,243,219);
-}
-.block-color-teal_background {
-	background: rgb(221,237,234);
-}
-.block-color-blue_background {
-	background: rgb(221,235,241);
-}
-.block-color-purple_background {
-	background: rgb(234,228,242);
-}
-.block-color-pink_background {
-	background: rgb(244,223,235);
-}
-.block-color-red_background {
-	background: rgb(251,228,228);
-}
-.select-value-color-default { background-color: rgba(206,205,202,0.5); }
-.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
-.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
-.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
-.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
-.select-value-color-green { background-color: rgba(0,135,107,0.2); }
-.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
-.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
-.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
-.select-value-color-red { background-color: rgba(255,0,26,0.2); }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-	
-</style></head><body><article id="dbe9f8bb-71ed-45cc-9824-6698fe399497" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_robert_stewart_spacewalk_2.jpg" style="object-position:center 42.190000000000005%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🌿</span></div><h1 class="page-title">Oleg Yarin</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="966a6a26-b855-450b-96be-f0a704dc14d6"><div style="font-size:1.5em"><span class="icon">🛠</span></div><div style="width:100%"><strong>Full-stack software engineer</strong> with the passion to create innovative, usable and valuable products. 
-Together with domain experts, UX designers and business developers I strive to produce customer-centric solutions by applying agile and lean methodologies both in the domain of project management as well as in the choice of a particular tech stack.                                                  </div></figure><hr id="5a7735d8-4aec-4862-a4f4-8b7dec6c79a0"/><h2 id="ab5ca644-235c-4f63-9a9f-8bc9c16f2f49" class="">📚Stack:</h2><ul id="cc0c0460-033e-49b3-a4d0-88f5e1fa746b" class="toggle"><li><details open=""><summary>Languages </summary><p id="552ba2b8-4c46-417e-8471-0ffe5f00eca7" class="">JavaScript(expert), Java(advanced), Python (advanced), Scala(intermediate).</p></details></li></ul><ul id="9a7eb23e-5739-4f84-aae0-f1c922fbc3d4" class="toggle"><li><details open=""><summary>Frontend</summary><p id="3d1bc7c8-ea81-4f81-90e8-b83b3dd92a48" class="">React, Redux, Graphql, Cypress, Jest, Enzyme, CSS3, Less &amp; JSS</p></details></li></ul><ul id="385d1199-8c8e-41c0-8180-42326cd0a41c" class="toggle"><li><details open=""><summary>Backend</summary><p id="ad1cfb66-e6e2-490f-9a86-be516e3242cc" class="">Express, Node.js, Apollo-sever, Postgresql.</p></details></li></ul><ul id="f95773d5-944c-4e7e-8569-edf7121a5883" class="toggle"><li><details open=""><summary>ML stack</summary><p id="5a550d92-afca-4cef-b0c1-c3188d3ff3ad" class="">Tensorflow, Apache Spark, hadoop, NumPy, pandas, matplotlib</p></details></li></ul><p id="90d7266c-04d2-4a54-b337-9004094364ce" class="">
-</p><h2 id="2265898b-bd3a-45c4-94c9-0c9725eb13c0" class="">Working Principles:</h2><div id="4e976bcd-e381-42fd-aa53-d7ff2b561efd" class="column-list"><div id="4dee76dd-761c-4118-9bd7-ab67678b9767" style="width:25%" class="column"><ul id="dc066da4-22c1-40ec-9d76-f33b049582e9" class="toggle"><li><details open=""><summary>TDD</summary><p id="9cae303a-ba70-4a3d-a5e6-ae262e52a329" class="">Test-driven development is key to sustainable software </p></details></li></ul></div><div id="5469c72f-4f51-49cb-8565-515d3580ab86" style="width:25%" class="column"><ul id="f2cbd893-aa0f-4f6a-8464-254c8d2560a3" class="toggle"><li><details open=""><summary>UX design principles </summary><p id="7d7501a1-10a0-48e5-ab82-b32d5a1f7b37" class="">I believe everything starts with a process. I strive to build the team which is autonomously taking care of the delivery process.</p></details></li></ul><p id="176cc198-cbdd-4c0a-a641-d3db254e0892" class="">
-</p></div><div id="89e0e944-39a0-4b12-8a0b-b7ea0d0e14fa" style="width:25%" class="column"><ul id="47c50eca-b628-4eec-bdac-4d83efb89d8f" class="toggle"><li><details open=""><summary>Agile</summary><p id="89cd479d-535b-43b4-af8d-2ef8d1b6b48e" class="">Short iterative cycles with fast access to the feedback from both users and team.</p></details></li></ul></div><div id="26c6a7e1-d910-49b6-aa84-d7f4061e523c" style="width:25%" class="column"><ul id="332dbac6-a3ba-4371-b399-3111fc71dbd8" class="toggle"><li><details open=""><summary>Pair programming</summary><p id="d7af82f3-52c6-4745-adc7-11cfb0010fd7" class="">Knowledge sharing boost quality of the product along with the spirit of the team. Modern frameworks provides wonderful remote pair-programming experience.</p></details></li></ul></div></div><p id="d5c07c55-5bfc-4a6e-9a72-012db5f068a2" class="">
-</p><h2 id="e4532552-c44b-4ba8-a12f-7ac3c84c6b55" class="">Professional values:</h2><p id="a8035b69-11c9-43d4-bec4-5da1b69482ab" class="">
-</p><div id="d31add4d-0c2e-4c59-bfb8-3e1a9e174428" class="column-list"><div id="3f40fbaa-8343-4c65-b40f-e6ab46a3812b" style="width:33.33333333333333%" class="column"><ul id="2c141a7d-858c-4ba0-baaa-e58955d411bf" class="toggle"><li><details open=""><summary>Avid Learning</summary><p id="39e9ad29-92bf-44c4-a649-45f42ad4af24" class="">I do understand how learning and memory work. I believe the best learning (language, framework/library) is achievable “by doing” and should be backed by a clear purpose.</p></details></li></ul></div><div id="938cea94-0226-45da-a7c0-51bfb3be5d5c" style="width:33.33333333333333%" class="column"><ul id="695dafec-02e6-4f43-bcff-2b87c8f2ec78" class="toggle"><li><details open=""><summary>Get shit done attitude</summary><p id="777dd639-fb2f-4f0c-9356-3c88f858e06e" class="">Usable results are better then no results. Getting stuff done and improving on a feedback.</p></details></li></ul></div><div id="ba3974ae-33cd-4862-acb3-809da8ddcbbe" style="width:33.33333333333333%" class="column"><ul id="9a9ca972-db2b-4c6c-94d4-89564a2ace8d" class="toggle"><li><details open=""><summary>Big picture first</summary><p id="d2aa00bf-e743-4a2a-b1ae-efe077d07285" class="">Making myself familiar with the codebase from day one, not afraid but eager to look inside frameworks/libraries to understand its core concepts and mental models.</p></details></li></ul></div></div><div id="8cb0135c-a036-4a6b-a83a-05a4459929a6" class="column-list"><div id="e92ff2ff-4969-498c-9ace-8dbc6971e12e" style="width:33.333333333333336%" class="column"><ul id="aaba7d55-9070-4544-84d0-cd0207141dc0" class="toggle"><li><details open=""><summary>Ownership</summary><p id="fdf67fa8-a12b-4321-9df0-17f472879bcf" class="">Taking ownership of a topic / user story and focused on producing the best outcome by collaborating with designers, POs, and business people in the conception phase</p></details></li></ul></div><div id="e2b7dc55-dac0-4070-9a9d-ed31083ae5c0" style="width:33.333333333333336%" class="column"><ul id="43ad4386-ecc0-4e33-86cb-fd05c7b86d91" class="toggle"><li><details open=""><summary>Collaboration</summary><p id="ac5967dc-a8fa-4d1a-a543-5483d5d41601" class="">Healthy collaboration and discussion with stakeholders and team members is crucial, to align the requirements, solutions, the value of a task and learnings.</p></details></li></ul></div><div id="de825332-b3c6-4849-93ba-3816945693dd" style="width:33.33333333333333%" class="column"><ul id="5112ae0a-3d04-4908-bdf0-e627bfca4a33" class="toggle"><li><details open=""><summary>Pay your debts</summary><p id="382d1afb-6c67-4613-a77c-e34f6dfa68cf" class="">Big amount of experience with refactoring, improving and migrating old codebases has given me the comprehension of how important code quality of software is.</p></details></li></ul></div></div><p id="a10b1805-fdc2-401a-95f5-93c77f4c4fb8" class="">
-</p><hr id="1d5073ba-7354-4a10-851c-df6cf4e3e1d6"/><p id="e62f7b4a-c348-41ff-9f31-78a370873f87" class="">
-</p><p id="f8b28792-43e8-4f9b-94c1-8b1f129cc47a" class="">
-</p><p id="7241d5c3-1e7d-434b-9b78-21273602766d" class="">
-</p><div id="a95b618a-c753-49aa-b8b8-e9b34cad43e2" class="column-list"><div id="8608ce7f-2ae7-423e-836f-8940b4b730c1" style="width:50%" class="column"><p id="47630c8e-9688-4c9c-9d05-3c94a30e68b4" class=""><strong>Diversity factor:</strong></p><p id="8469ebc5-1f28-412a-952b-9069fd9616fc" class="">Grew up in Yakutsk, Russia - a coldest populated city on earth.</p><p id="22bd331b-2849-4dd9-8150-4ab3b2e5c81e" class="">
-</p></div><div id="a7adc7cd-da30-4dee-92f3-159f15b6f55e" style="width:50%" class="column"><p id="4323e014-ae04-46a0-8735-00297c3e28fd" class=""><strong>Interests:</strong></p><p id="83011b03-fa84-415f-aff3-dc8d5c3c067f" class="">Neuroscience, Spirituality, Dance, Volunteering, Part of the burn community(participation in burn events)</p></div></div><p id="abe07dc6-8dd2-4161-871f-21383bf7b08e" class="">
-</p><p id="f567591b-75c1-4724-a967-24c0643e6995" class="">
-</p></div></article></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .zen {
+        background: linear-gradient(
+          to bottom,
+          rgba(139, 150, 253),
+          rgba(249, 218, 158, 0.78)
+        );
+      }
+      .zen-title {
+        font-family: "Gurmukhi MN";
+        font-size: 40px;
+      }
+      p {
+        font-family: "Futura";
+        font-weight: 300;
+        font-size: 20px;
+        margin: 20px;
+      }
+      .mission {
+        font-family: "Futura";
+      }
+      .desc {
+        width: 30%;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <div class="zen h-full">
+      <h1 class="zen-title text-5xl text-center p-10">ZEN EXPERIENCES</h1>
+      <div class="flex items-center justify-center">
+        <p class="desc m-2 text-2xl text-center">
+          Curated somatic, wellness & mindfulness programs for your teams hosted
+          by licensed practitioners and facilitators.
+        </p>
+      </div>
+      >
+
+      <div class="mission m-5 p-10">
+        <h1 class="text-5xl text-left py-6">Our Mission</h1>
+
+        <p class="text-l text-left w-80 py-2 font-light text-base">
+          In our high paced and competitive professional environments where
+          teams work under high pressure - stress, conflict and burnout are the
+          top reasons why employees leave their jobs.
+        </p>
+        <p class="w-80 py-2 font-light text-base">
+          Moreover, in the past 10 years in Germany the amount of sick leave
+          days only due to burnout and mental issues increased by 56%.
+        </p>
+        <p class="w-80 py-2 font-light text-base">
+          In order to cultivate cultures that embody professionalism and
+          collaboration, workplaces need to provide their employees with
+          regenerating moments and helpful tools to regulate their stress
+          levels, transcend conflicts, build trust & achieve flow states as an
+          aligned team.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
