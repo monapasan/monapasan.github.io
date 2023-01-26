@@ -1,0 +1,68 @@
+.zen {
+  background: linear-gradient(
+    rgba(139, 150, 253) 4%,
+    rgba(249, 218, 158, 0.78) 20%,
+    rgba(139, 150, 253, 0.24) 50%
+  );
+}
+.zen-title {
+  font-family: "Gurmukhi MN";
+  font-size: 40px;
+}
+.zen h2 {
+  font-size: 60px;
+  font-family: "Futura";
+  font-weight: 500;
+}
+.zen h4 {
+  font-size: 40px;
+  font-family: "Futura";
+  font-weight: 500;
+}
+p {
+  font-family: "Futura";
+  font-weight: 300;
+  font-size: 20px;
+  margin: 20px;
+}
+.mission {
+  font-family: "Futura";
+}
+.desc {
+  width: 30%;
+}
+.mission b {
+  font-weight: 600;
+}
+.circular-sb {
+  bottom: -6rem;
+  right: 3rem;
+  width: 200px;
+  height: 200px;
+  border: 5px solid #7e8bff;
+  background-color: #7e8bff;
+  padding: 80px 0px;
+  margin: 30px auto;
+  border-radius: 50%;
+}
+.get-in-touch .circular-sb {
+  bottom: -7rem;
+  right: -2rem;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  nav a {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+  .mission {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
